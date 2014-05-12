@@ -10,7 +10,7 @@ data Expr = Var Name
 
 instance Show Expr where
   show (Var name)      = name
-  show (Lambda name e) = "λ" ++ name ++ " → " ++ (show e)
+  show (Lambda name e) = "\\" ++ name ++ " . " ++ (show e)
   show (App a b) = (showA a) ++ " " ++ (showB b)
                    where
                      showA a@(Lambda _ _) = "(" ++ show a ++ ")"
