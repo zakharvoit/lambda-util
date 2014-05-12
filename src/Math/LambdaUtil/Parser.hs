@@ -30,11 +30,11 @@ parens' = between ((char '(')) ((char ')'))
 parseLambda = try parseLambda'
 parseLambda' = do
   spaces
-  char '\\'
+  (char '\\') <|> (char 'λ')
   spaces
   (Var name) <- parseVar
   spaces
-  char '.'
+  (char '.') <|> (char '-' >> char '>')
   spaces
   e <- parseLambdaExpr
   return $ Lambda name e
