@@ -25,6 +25,7 @@ executable lambda-generator
 library
   exposed-modules:     Math.LambdaUtil.Generator,
                        Math.LambdaUtil.LambdaExpr
+                       Math.LambdaUtil.Normalizer
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.6 && <4.7,
